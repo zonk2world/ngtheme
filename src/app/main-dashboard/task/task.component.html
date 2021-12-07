@@ -1,0 +1,20 @@
+<h4 class="box-title mt-0">Tasks</h4>
+<ul class="list-task list-group pl-0" data-role="tasklist">
+  <li class="list-group-item border-0 pl-0" data-role="task" *ngFor="let task of taskData; let i = index;">
+    <h6>{{ task.title }}</h6>
+    <div class="d-flex w-100 justify-content-between align-items-center">
+      <div class="custom-control custom-checkbox material-checkbox">
+        <input type="checkbox" class="custom-control-input" id="meetNewSuppliers{{i}}" [checked]="task.status === 'Done'" (change)="changeStatus($event, i)">
+        <label class="custom-control-label ml-0" for="meetNewSuppliers{{i}}">
+          <span> Task By: {{ task.assignedBy }}</span> to  {{ task.assignedTo }}
+        </label>
+      </div>
+      <span [ngClass]="{
+      'badge-warning': task.status === 'In progress',
+      'badge-success': task.status === 'Done'}" class="badge">
+        {{ task.status }}
+      </span>
+    </div>
+  </li>
+</ul>
+

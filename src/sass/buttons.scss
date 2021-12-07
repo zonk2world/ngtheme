@@ -1,0 +1,562 @@
+/*
+[Buttons]
+------------------------------------------------------------------
+*/
+
+/*
+1. Buttons Base Styles
+2. Button Sizes
+3. Rounded buttons
+4. Circle buttons
+5. Dropdown menus
+6. Buttons with label
+7. Social icon buttons
+8. Animated buttons
+9. Misc buttons
+-------------------------------------------------------------------
+*/
+
+/*
+1. Buttons Base Styles
+--------------------------------------------------
+*/
+
+button {
+  outline: none !important;
+}
+.btn {
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .5px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  border: none;
+  @include border-radius(2px);
+  background-image: none !important;
+  color: $dark-blue;
+  background-color: $whitesmoke;
+  text-shadow: none;
+  line-height: 21px;
+  padding: 6px 12px;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+  @include transition(all 200ms ease-out);
+  &:hover {
+    background-color: fade-out($whitesmoke, .8);
+  }
+  &.active {
+    border-color: $whitesmoke;
+    background: #fff;
+  }
+  &:focus, &:active:focus, &.active:focus {
+    outline: none;
+    @include box-shadow(none);
+  }
+  &.disabled, &[disabled] {
+    @include box-shadow(none);
+  }
+  i{
+    &.left{
+      margin-right:5px;
+    }
+    &.right{
+      margin-left:5px;
+    }
+  }
+  &:not([disabled]):not(.disabled).active:not(.btn-raised), &:not([disabled]):not(.disabled):active {
+    @include box-shadow(none);
+  }
+  &:focus, &:active:focus, &.active:focus, &.focus, &:active.focus, &.active.focus {
+    outline: 0;
+  }
+}
+
+a{
+  &.btn-primary, &.btn-success, &.btn-info, &.btn-warning, &.btn-danger, &.btn-secondary, &.btn-dark{
+    color: #fff;
+  }
+}
+
+.button-box{
+ .btn {
+    margin-top: 10px;
+  }
+}
+
+
+.btn-secondary, .btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger, .btn-light, .btn-dark  {
+  &:hover{
+    color: #ffffff;
+  }
+  .badge {
+    color: #ffffff;
+  }
+  &.disabled:hover, &[disabled]:hover,
+  &.disabled:focus, &[disabled]:focus,
+  &.disabled:active, &[disabled]:active,
+  &.disabled.active, &[disabled].active,
+  &.active, &:active,
+  &.active:focus,
+  &:not([disabled]):not(.disabled).active,
+  &:not([disabled]):not(.disabled):active,
+  &:not(:disabled):not(.disabled):active:focus{
+    @include box-shadow(none);
+  }
+}
+
+.btn-link {
+  color: $dark-blue;
+  background-color: transparent;
+  border: none;
+  &:hover, &:focus, &:active, &.active, &.disabled, &[disabled] {
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+/*
+2. Button Sizes
+--------------------------------------------------
+*/
+.btn-lg, .btn-group-lg > .btn {
+  padding-left: 28px;
+  padding-right: 28px;
+  line-height: 23px;
+}
+
+.btn-sm, .btn-group-sm > .btn {
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 11.9px;
+  line-height: 20px;
+}
+
+.btn-xs, .btn-group-xs > .btn {
+  padding: 2px 9px;
+  font-size: 10.5px;
+}
+
+
+/*
+3. Justified button groups
+--------------------------------------------------
+*/
+
+.btn-group-justified {
+  display: flex;
+  width: 100%;
+  .btn,
+  .btn-group {
+    flex: 1;
+    .btn {
+      width: 100%;
+    }
+    .dropdown-menu {
+      left: auto;
+    }
+  }
+}
+
+/*
+4. Rounded buttons
+--------------------------------------------------
+*/
+
+.btn-rounded {
+  @include border-radius(60px!important);
+}
+
+/*
+5. Circle buttons
+--------------------------------------------------
+*/
+.btn-circle{
+  width: 30px;
+  height: 30px;
+  @include border-radius(50%);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.428571429;
+  padding: 0;
+}
+
+/*
+6. Dropdown menus
+--------------------------------------------------
+*/
+
+.btn-group{
+  &.show{
+    .dropdown-toggle {
+      @include box-shadow(none);
+    }
+  }
+}
+
+.btn-group-with-icon{
+  button{
+    i{
+      padding-top: 5px;
+      padding-bottom: 7px;
+      font-size: 15px;
+    }
+    span{
+      font-size: 12px;
+      display: block;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.show {
+  > .dropdown-toggle {
+    &.btn-primary, &.btn-success, &.btn-info, &.btn-warning, &.btn-danger, &.btn-secondary, &.btn-dark, &.btn-light {
+      @include box-shadow(none);
+      color: white;
+      &:focus {
+        @include box-shadow(none);
+      }
+    }
+  }
+  > .btn-outline-primary, > .btn-outline-success, > .btn-outline-info, > .btn-outline-warning, > .btn-outline-danger, > .btn-outline-secondary, > .btn-outline-dark, > .btn-outline-light {
+    &.dropdown-toggle{
+      @include box-shadow(none);
+    }
+  }
+  .dropdown-menu {
+    margin-top: 0;
+  }
+}
+.dropdown-menu {
+  @include box-shadow(0 2px 5px 0 rgba(0, 0, 0, 0.26));
+  @include border-radius(2px);
+  border: 0;
+  margin-top: -20px;
+  .divider {
+    background-color: $whitesmoke;
+    height: 1px;
+    border-bottom: 0;
+  }
+  > li {
+    padding-left: 0;
+    &.dropdown-header {
+      padding: 3px 20px;
+    }
+    &.active {
+      > a {
+        color: #161b1d;
+        text-decoration: none;
+        background-color: #e5e8e9;
+        background-image: none;
+        &:hover, &:focus {
+          color: #161b1d;
+          text-decoration: none;
+          background-color: #e5e8e9;
+          background-image: none;
+        }
+      }
+    }
+    &.disabled{
+      > a {
+        color: #8298a0;
+        &:hover, &:focus {
+          color: #8298a0;
+          text-decoration: none;
+          cursor: default;
+          background-color: transparent;
+          background-image: none;
+        }
+      }
+    }
+    > a {
+      line-height: 28px;
+      color: #51646b;
+      padding: 0 20px;
+      @include border-radius(3px);
+      text-align: left;
+      &:hover, &:focus, .active, &:active {
+        color: #161b1d;
+        text-decoration: none;
+        background-color: $whitesmoke;
+        background-image: none;
+      }
+
+    }
+  }
+  .dropdown-item{
+    &:hover, &:focus, .active, &:active {
+      color: #161b1d;
+      text-decoration: none;
+      background-color: $whitesmoke;
+      background-image: none;
+    }
+  }
+}
+
+.dropdown-backdrop {
+  z-index: 600;
+}
+
+.dropdown-toggle{
+  &.ripple {
+    .ripple-effect{
+      background: white;
+    }
+  }
+}
+.show{
+  > [class*="btn-outline-"]{
+    &.dropdown-toggle{
+      &:focus{
+        @include box-shadow(none);
+        outline: none;
+      }
+    }
+  }
+}
+
+/*
+7. Buttons with label
+--------------------------------------------------
+*/
+.btn-label {
+  background: rgba(0, 0, 0, 0.05);
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 3px 0 0 3px;
+  margin: -7px 7px -7px -13px;
+  margin-right: 12px;
+}
+
+/*
+8. Social icon buttons
+--------------------------------------------------
+*/
+.btn-circle{
+  @include border-radius(50%);
+  height:30px;
+  width:30px;
+}
+.btn-facebook {
+  background-color: #3b5998!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #3b5998!important;
+  }
+}
+.btn-twitter {
+  background-color: #55acee!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #55acee!important;
+  }
+}
+.btn-googleplus {
+  background-color: #dd4b39!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #dd4b39!important;
+  }
+}
+.btn-linkedin {
+  background-color: #007bb6!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #007bb6!important;
+  }
+}
+.btn-instagram {
+  background-color: #3f729b!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #3f729b!important;
+  }
+}
+.btn-pinterest {
+  background-color: #cb2027!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #cb2027!important;
+  }
+}
+.btn-dribbble {
+  background-color: #ea4c89!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #ea4c89!important;
+  }
+}
+.btn-youtube {
+  background-color: #b00!important;
+  color: #ffffff !important;
+  &.bg-transparent{
+    background-color: transparent!important;
+    color: #ea4c89!important;
+  }
+}
+
+/*
+9. Animated buttons
+--------------------------------------------------
+*/
+
+.btn-animated {
+  overflow: hidden;
+  @include backface-visibility(hidden);
+  @include transform-style(preserve-3d);
+  > span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    @include backface-visibility(hidden);
+    @include transition(all 0.2s ease-in-out);
+    @include transform-style(preserve-3d);
+  }
+  &:before {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 2.5;
+    @include transition(all 0.2s ease-in-out);
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @include transition(all 0.2s ease-in-out);
+  }
+  &.from-top {
+    &:before {
+      left: 0;
+      top: -100%;
+    }
+    &:hover, &.show-icon {
+      &:before{
+        top: 0;
+      }
+    }
+    &:hover, &.show-icon{
+      > span{
+        @include transform(translateY(300%));
+      }
+    }
+  }
+  &.from-left {
+    &:before {
+      left: -100%;
+      top: 0;
+    }
+    &:hover, &.show-icon {
+      &:before{
+        left: 0;
+      }
+    }
+    &:hover, &.show-ico {
+      > span{
+        @include transform(translateX(200%));
+      }
+    }
+  }
+  &.fa{
+    &:before {
+      font-family: FontAwesome;
+    }
+  }
+}
+
+/*
+10. Misc buttons
+--------------------------------------------------
+*/
+
+.btn-toolbar {
+  .btn {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.btn-raised{
+  @include box-shadow(0 1px 3px 0 rgba(0, 0, 0, 0.33));
+  &:hover, &.active, &:focus, &:active:focus, &.active:focus {
+    @include box-shadow(0 3px 8px 0 rgba(0, 0, 0, 0.38));
+  }
+  &.disabled, &[disabled]{
+    @include box-shadow(none);
+  }
+}
+
+[class*="btn-outline-"]{
+  color: inherit;
+  background-color: transparent;
+  @include transition(all .5s ease);
+  &:focus, &:not(:disabled):not(.disabled).active:focus{
+    @include box-shadow(none);
+    outline: none;
+  }
+}
+
+.btn-outline-red{
+  @include theme-button($red);
+}
+.btn-outline-cyan{
+  @include theme-button($cyan);
+}
+.btn-outline-green{
+  @include theme-button($green);
+}
+.btn-outline-grey{
+ @include theme-button($grey);
+}
+.btn-outline-orange{
+  @include theme-button($orange);
+}
+.btn-outline-purple{
+  @include theme-button($purple);
+}
+
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity = 0);
+    opacity: 0;
+    background: $red;
+    cursor: inherit;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn-group-with-icon{
+    button{
+      span{
+        font-size: 10px;
+      }
+      i{
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

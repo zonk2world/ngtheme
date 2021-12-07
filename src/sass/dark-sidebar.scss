@@ -1,0 +1,82 @@
+/*
+[Dark Sidebar]
+------------------------------------------------------------------
+*/
+
+.dark-sidebar{
+  .sidebar{
+    background: $dark-sidebar;
+    .scroll-wrapper{
+      .nav-title{
+        .site-title {
+          color: $whitesmoke;
+        }
+      }
+      .profile{
+        .profile-pic {
+          .profile-img {
+            background: #fff;
+          }
+        }
+        .profile-info {
+          h2 {
+            color: $whitesmoke;
+          }
+        }
+      }
+      .main-menu-wrapper{
+        .menu-section{
+          h3 {
+            color: $whitesmoke;
+          }
+          .nav{
+            &.side-menu {
+              > li{
+                a{
+                  color: $whitesmoke;
+                }
+                &:hover, &:focus{
+                  > a{
+                    background: rgba(0, 0, 0, 0.03);
+                  }
+                }
+                &.active{
+                  > a{
+                    background: rgba(0, 0, 0, 0.03);
+                  }
+                }
+                &.active-child {
+                  > a{
+                    background: rgba(0, 0, 0, 0.03);
+                  }
+                }
+              }
+            }
+            &.child-menu {
+              background: $dark-sidebar!important;
+              .child-menu-title{
+                color: white;
+              }
+              > li {
+                > a {
+                  color: $whitesmoke;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

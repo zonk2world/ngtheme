@@ -1,0 +1,26 @@
+@import "../../../../src/sass/variables";
+.carousel-wrapper{
+  &.col-12{
+    height: calc(50% - 5px);
+  }
+  .dashboard-carousel{
+    .carousel-inner{
+      margin-top: 20px;
+    }
+    .carousel-indicators{
+      top: 0;
+      left: 0;
+      justify-content: start;
+      margin: 0;
+      li{
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+  .profile-img{
+    width: 44px;
+    height: 44px;
+  }
+}
+

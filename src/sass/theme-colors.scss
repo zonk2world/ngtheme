@@ -1,0 +1,25 @@
+@import "variables";
+@import "mixins";
+
+/*------------------------------------------------------------------
+[Theme Colors]
+*/
+
+.theme-red{
+  @include theme-color($red, $red, $red, $red-light);
+}
+.theme-grey{
+  @include theme-color($grey, $grey-darker, $grey-dark, $grey-light);
+}
+.theme-cyan{
+  @include theme-color($cyan, $cyan-darker, $cyan-dark, $cyan-light);
+}
+.theme-purple{
+  @include theme-color($purple, $purple-darker, $purple-dark, $purple-light);
+}
+.theme-green{
+  @include theme-color($green, $green-darker, $green-dark, $green-light);
+}
+.theme-orange{
+  @include theme-color($orange, $orange-darker, $orange-dark, $orange-light);
+}

@@ -1,0 +1,41 @@
+<div class="main-container login-register">
+  <div class="d-flex justify-content-center h-100vh w-100 align-items-center">
+    <div class="register-container">
+      <div class="form-container">
+        <div class="text-center logo-container">
+          <a routerLink="/home"><img src="/assets/img/logo.png" alt="Logo"></a>
+        </div>
+        <h4 class="text-center">Register your accaunt</h4>
+        <form [formGroup]="registerForm" class="material-form">
+          <div class="form-group">
+            <input type="email" class="form-control" formControlName="email">
+            <label for="email">Email</label>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="password">
+            <label for="password">Password</label>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" formControlName="confirmpassword">
+            <label for="confirmpassword">Confirm Password</label>
+          </div>
+          <label class="error">{{errorMessage}}</label>
+          <div class="form-group">
+            <button type="submit" (click)="tryRegister(registerForm.value)" class="btn btn-theme ripple btn-raised btn-block btn-submit">
+              <span>Register</span>
+            </button>
+          </div>
+          <div class="form-group mb-0">
+            <div class="text-center form-bottom">
+              <p>Already have an account? <a href="/login"><b>Login</b></a></p>
+              <p class="text-center text-uppercase bold">or</p>
+              <div>
+                <button type="button" (click)="tryGoogleLogin()" class="btn btn-googleplus ripple btn-raised btn-block btn-submit" title="Google"> <i class="fa fa-google" aria-hidden="true"></i> Sign in With Google</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

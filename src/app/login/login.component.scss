@@ -1,0 +1,214 @@
+@import "../../sass/mixins";
+@import "../../sass/variables";
+/*
+[Login & Register pages]
+------------------------------------------------------------------
+*/
+
+.login-register{
+  background-image: url('/assets/img/bg.png');
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+  display: inline-block;
+  &:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top:0;
+    background: rgba(45, 46, 46, 0.51);
+    z-index: 1;
+  }
+  .login-container, .register-container{
+    z-index: 2;
+    .logo-container{
+      margin-bottom: 15px;
+      img{
+        width: 65px;
+        height: auto;
+      }
+      .logo{
+        font-size: 18px;
+      }
+    }
+    .form-container{
+      background: white;
+      padding: 38px;
+      @include box-shadow(0 4px 23px 0 rgba(0,0,0,.09));
+      h4{
+        margin-bottom: 20px;
+      }
+      form{
+        .form-group{
+          small{
+            a{
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+          .btn-submit{
+            padding: 10px;
+            font-size: 17px;
+            @include border-radius(0);
+          }
+          .form-bottom{
+            color: fade-out($light-grey, .3);
+            .btn-circle{
+              font-size: 16px;
+            }
+          }
+        }
+        .material-checkbox {
+          .custom-control-label {
+            margin-left: 0;
+            padding-left: 10px;
+          }
+        }
+        .form-check{
+          margin-bottom: 25px;
+          .custom-control-label:before {
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+  .login-container-full-height, .register-container-full-height{
+    background-color: white;
+    width: 30%;
+    z-index: 2;
+    position: relative;
+    .logo-container{
+      margin-bottom: 15px;
+      img{
+        width: 80px;
+        height: auto;
+      }
+      .logo{
+        font-size: 18px;
+      }
+    }
+    h4{
+      margin-bottom: 20px;
+    }
+    form{
+      width: 75%;
+      .form-group{
+        small{
+          a{
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+        .btn-submit{
+          padding: 10px;
+          font-size: 17px;
+          @include border-radius(0);
+        }
+        .form-bottom{
+          color: fade-out($light-grey, .3);
+          .btn-circle{
+            font-size: 16px;
+          }
+        }
+      }
+      .form-check{
+        margin-bottom: 25px;
+      }
+    }
+  }
+  .login-container{
+    .form-container {
+      width: 440px;
+    }
+  }
+  .register-container{
+    .form-container {
+      width: 440px;
+    }
+  }
+  .form-check{
+    a{
+      @include transition(color .3s ease);
+      &:hover{
+        font-weight: 600;
+        opacity: .8;
+        color: $dark-blue;
+      }
+    }
+  }
+}
+
+@media (max-height: 420px)  {
+  .login-register {
+    min-height: 100%!important;
+    height: auto!important;
+    .logo-container{
+      padding-top: 10px;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .login-register{
+    .login-container, .register-container{
+      width: 100%;
+      .form-container{
+        min-height: 100vh;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include flex-direction(column);
+        form{
+          width: 80%;
+        }
+      }
+    }
+    .login-container-full-height, .register-container-full-height{
+      width: 100%;
+      min-height: 100vh;
+    }
+  }
+}
+
+@media (min-width: 578px) and (max-width: 1200px) {
+  .login-register{
+    .login-container-full-height, .register-container-full-height{
+      width: 50%;
+    }
+  }
+}
+@media (max-width: 340px) {
+  .login-register{
+    .login-container,  .login-container-full-height, .register-container,  .register-container-full-height{
+      h4, .logo-container {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      .logo-container{
+        img{
+          width: 45px;
+        }
+      }
+      .form-container{
+        padding: 2px;
+        h4, .logo-container {
+          margin-bottom: 0;
+          margin-top: 0;
+        }
+        .material-form{
+          .form-group{
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+  }
+}

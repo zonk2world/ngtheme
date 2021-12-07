@@ -1,0 +1,128 @@
+/*
+[Variables]
+------------------------------------------------------------------
+*/
+
+$dark-blue: #2A3F54;
+$darker-blue: #172d44;
+$pink: #ed687c;
+$dark-red: #cd343e;
+$black: #36404a;
+$light-grey: #73879C;
+$lighter-grey: #e6e6e6;
+$whitesmoke: #f2f2f2;
+$link-color: #5A738E;
+$code-color: #be5d5e;
+$error: #eb7374;
+$form-success: #3a938b;
+$default: #5e5e5e;
+$blue: #3498DB;
+$blue-sky: #50C1CF;
+$light-blue: #f4f8fb;
+$blue-grey: #455A64;
+$blue-grey-dark: #37474F;
+$blue-grey-darker: #263238;
+$blue-grey-light: #546E7A;
+$blue-grey-lighter: #607D8B;
+
+$dark-sidebar: #7836e4;
+$sidebar-dark-color: #fff;
+$sidebar-dark-color-dark: darken($sidebar-dark-color, 10%);
+$sidebar-dark-color-darker: darken($sidebar-dark-color, 15%);
+$sidebar-dark-color-light: lighten($sidebar-dark-color, 10%);
+$sidebar-dark-color-lighter: lighten($sidebar-dark-color, 15%);
+
+$green: #0aa89e;
+$green-dark: darken($green, 10%);
+$green-darker: darken($green, 15%);
+$green-light: lighten($green, 10%);
+$green-lighter: lighten($green, 15%);
+
+$grey: #8b91a0;
+$grey-dark: darken($grey, 10%);
+$grey-darker: darken($grey, 15%);
+$grey-light: lighten($grey, 10%);
+$grey-lighter: lighten($grey, 15%);
+
+$cyan: #4DD0E1;
+$cyan-dark: darken($cyan, 10%);
+$cyan-darker: darken($cyan, 15%);
+$cyan-light: lighten($cyan, 10%);
+$cyan-lighter: lighten($cyan, 15%);
+
+$purple: #6d5cae;
+$purple-dark: darken($purple, 10%);
+$purple-darker: darken($purple, 15%);
+$purple-light: lighten($purple, 10%);
+$purple-lighter: lighten($purple, 15%);
+
+$red: #e43a45;
+$red-dark: darken($red, 10%);
+$red-darker: darken($red, 15%);
+$red-light: lighten($red, 10%);
+$red-lighter: lighten($red, 15%);
+
+$orange: #ffaa00;
+$orange-dark: darken($orange, 10%);
+$orange-darker: darken($orange, 15%);
+$orange-light: lighten($orange, 10%);
+$orange-lighter: lighten($orange, 15%);
+
+/*
+[Default Colors]
+------------------------------------------------------------------
+*/
+
+$success: #0aa89e;
+$success-dark: darken($success, 10%);
+$success-darker: darken($success, 15%);
+$success-light: lighten($success, 10%);
+$success-lighter: lighten($success, 15%);
+
+$secondary:#cfd0d2;
+$secondary-dark: darken($secondary, 10%);
+$secondary-darker: darken($secondary, 15%);
+$secondary-light: lighten($secondary, 10%);
+$secondary-lighter: lighten($secondary, 15%);
+
+$info: #4DD0E1;
+$info-dark: darken($info, 10%);
+$info-darker: darken($info, 15%);
+$info-light: lighten($info, 10%);
+$info-lighter: lighten($info, 15%);
+
+$primary: #6d5cae;
+$primary-dark: darken($primary, 10%);
+$primary-darker: darken($primary, 15%);
+$primary-light: lighten($primary, 10%);
+$primary-lighter: lighten($primary, 15%);
+
+$danger: #e43a45;
+$danger-dark: darken($danger, 10%);
+$danger-darker: darken($danger, 15%);
+$danger-light: lighten($danger, 10%);
+$danger-lighter: lighten($danger, 15%);
+
+$warning: #ffaa00;
+$warning-dark: darken($warning, 10%);
+$warning-darker: darken($warning, 15%);
+$warning-light: lighten($warning, 10%);
+$warning-lighter: lighten($warning, 15%);
+
+$light: #eaeef3;
+$light-dark: darken($light, 10%);
+$light-darker: darken($light, 15%);
+$light-light: lighten($light, 10%);
+$light-lighter: lighten($light, 15%);
+
+$dark:#8e959d;
+$dark-dark: darken($dark, 10%);
+$dark-darker: darken($dark, 15%);
+$dark-light: lighten($dark, 10%);
+$dark-lighter: lighten($dark, 15%);
+
+$custom: #4DD0E1;
+$custom-dark: darken($custom, 10%);
+$custom-darker: darken($custom, 15%);
+$custom-light: lighten($custom, 10%);
+$custom-lighter: lighten($custom, 15%);

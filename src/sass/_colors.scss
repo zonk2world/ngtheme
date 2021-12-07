@@ -1,0 +1,1132 @@
+@import "variables";
+
+/*
+[Color Settings]
+------------------------------------------------------------------
+*/
+
+/*
+Background color options
+--------------------------------------------------
+*/
+
+/*
+  Primary
+*/
+.bg-primary {
+  background-color: $primary!important;
+  color: white;
+}
+
+.bg-primary-dark {
+  background-color: $primary-dark!important;
+  color: white;
+}
+
+.bg-primary-darker {
+  background-color: $primary-darker!important;
+  color: white;
+}
+
+.bg-primary-light {
+  background-color: $primary-light!important;
+  color: white;
+}
+
+.bg-primary-lighter {
+  background-color: $primary-lighter!important;
+  color: white;
+}
+
+/*
+  Secondary
+*/
+.bg-secondary {
+  background-color: $secondary!important;
+  color: white;
+}
+
+.bg-secondary-dark {
+  background-color: $secondary-dark!important;
+  color: white;
+}
+
+.bg-secondary-darker {
+  background-color: $secondary-darker!important;
+  color: white;
+}
+
+.bg-secondary-light {
+  background-color: $secondary-light!important;
+  color: white;
+}
+
+.bg-secondary-lighter {
+  background-color: $secondary-lighter!important;
+  color: white;
+}
+
+/*
+  Success
+*/
+.bg-success {
+  background-color: $success!important;
+  color: white;
+}
+
+.bg-success-dark {
+  background-color: $success-dark!important;
+  color: white;
+}
+
+.bg-success-darker {
+  background-color: $success-darker!important;
+  color: white;
+}
+
+.bg-success-light {
+  background-color: $success-light!important;
+  color: white;
+}
+
+.bg-success-lighter {
+  background-color: $success-lighter!important;
+  color: white;
+}
+
+/*
+  Info
+*/
+.bg-info {
+  background-color: $info!important;
+  color: white;
+}
+
+.bg-info-dark {
+  background-color: $info-dark!important;
+  color: white;
+}
+
+.bg-info-darker {
+  background-color: $info-darker!important;
+  color: white;
+}
+
+.bg-info-light {
+  background-color: $info-light!important;
+  color: white;
+}
+
+.bg-info-lighter {
+  background-color: $info-lighter!important;
+  color: white;
+}
+
+/*
+  Danger
+*/
+.bg-danger {
+  background-color: $danger!important;
+  color: white;
+}
+.bg-danger-dark {
+  background-color: $danger-dark!important;
+  color: white;
+}
+
+.bg-danger-darker {
+  background-color: $danger-darker!important;
+  color: white;
+}
+
+.bg-danger-light {
+  background-color: $danger-light!important;
+  color: white;
+}
+
+.bg-danger-lighter {
+  background-color: $danger-lighter!important;
+  color: white;
+}
+
+/*
+  Warning
+ */
+.bg-warning {
+  background-color: $warning!important;
+  color: white;
+}
+
+.bg-warning-dark {
+  background-color: $warning-dark!important;
+  color: white;
+}
+
+.bg-warning-darker {
+  background-color: $warning-darker!important;
+  color: white;
+}
+
+.bg-warning-light {
+  background-color: $warning-light!important;
+  color: white;
+}
+
+.bg-warning-lighter {
+  background-color: $warning-lighter!important;
+  color: white;
+}
+
+
+/*
+5. Text color options
+--------------------------------------------------
+*/
+
+.text-primary{
+  color: $primary!important;
+}
+.text-secondary{
+  color: $secondary!important;
+}
+.text-success{
+  color: $success!important;
+}
+.text-info{
+  color: $info!important;
+}
+.text-warning{
+  color:$warning!important;
+}
+.text-danger{
+  color:$danger!important;
+}
+.text-light{
+  color: $light!important;
+}
+.text-dark{
+  color: $dark!important;
+}
+a{
+  &.text-primary{
+    &:focus, &:hover{
+      color: $primary-dark!important;
+    }
+  }
+  &.text-success{
+    &:focus, &:hover{
+      color: $success-dark!important;
+    }
+  }
+  &.text-info{
+    &:focus, &:hover{
+      color: $info-dark!important;
+    }
+  }
+  &.text-warning{
+    &:focus, &:hover{
+      color: $warning-dark!important;
+    }
+  }
+  &.text-danger{
+    &:focus, &:hover{
+      color: $danger-dark!important;
+    }
+  }
+  &.text-secondary{
+    &:focus, &:hover{
+      color: $secondary-dark!important;
+    }
+  }
+  &.text-light{
+    &:focus, &:hover{
+      color: $light-dark!important;
+    }
+  }
+  &.text-dark{
+    &:focus, &:hover{
+      color: $dark-dark!important;
+    }
+  }
+}
+
+
+/*
+7. Badges
+--------------------------------------------------
+*/
+.badge-primary {
+  background-color:$primary;
+  color: #ffffff;
+  .badge{
+    background-color: $primary-dark;
+  }
+}
+.badge-secondary {
+  background-color:$secondary;
+  color: #ffffff;
+  .badge{
+    background-color: $secondary-dark;
+  }
+}
+.badge-success {
+  background-color:$success;
+  color: #ffffff;
+  .badge{
+    background-color: $success-dark;
+  }
+}
+
+.badge-warning {
+  background-color: $warning;
+  color: #ffffff;
+  .badge{
+    background-color: $warning-dark;
+  }
+}
+
+.badge-important, .badge-danger {
+  background-color: $danger;
+  color: #ffffff;
+  .badge{
+    background-color: $danger-dark;
+  }
+}
+
+.badge-info {
+  background-color: $info;
+  color: #ffffff;
+  .badge{
+    background-color: $info-dark;
+  }
+}
+
+.badge-light {
+  background-color: $light;
+  color: $dark;
+  .badge{
+    background-color: $light-dark;
+  }
+}
+.badge-dark {
+  background-color: $dark;
+  color: #ffffff;
+  .badge{
+    background-color: $dark-dark;
+  }
+}
+
+/*
+9. Checkboxes & Radios
+--------------------------------------------------
+*/
+
+/*
+ Custom Checkboxes & Radios
+ */
+.custom-checkbox{
+  &.custom-checkbox-primary {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $primary;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-success {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $success;
+          border-color: $success;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-info {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $info;
+          border-color: $info;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-secondary {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $secondary;
+          border-color: $secondary;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-danger {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $danger;
+          border-color: $danger;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-warning {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $warning;
+          border-color: $warning;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-light {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $light;
+          border-color: $light;
+        }
+      }
+    }
+  }
+  &.custom-checkbox-dark {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $dark;
+          border-color: $dark;
+        }
+      }
+    }
+  }
+}
+
+.custom-radio {
+  &.custom-radio-primary {
+    .custom-control-input {
+      &:checked {
+        ~ .custom-control-label:before {
+          background-color: $primary;
+          border-color: $primary;
+        }
+      }
+    }
+  }
+  &.custom-radio-success{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $success;
+          border-color: $success;
+        }
+      }
+    }
+  }
+  &.custom-radio-info{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $info;
+          border-color: $info;
+        }
+      }
+    }
+  }
+  &.custom-radio-secondary{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $secondary;
+          border-color: $secondary;
+        }
+      }
+    }
+  }
+  &.custom-radio-danger{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $danger;
+          border-color: $danger;
+        }
+      }
+    }
+  }
+  &.custom-radio-warning{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $warning;
+          border-color: $warning;
+        }
+      }
+    }
+  }
+  &.custom-radio-light{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $light;
+          border-color: $light;
+        }
+      }
+    }
+  }
+  &.custom-radio-dark{
+    .custom-control-input {
+      &:checked {
+        ~.custom-control-label:before {
+          background-color: $dark;
+          border-color: $dark;
+        }
+      }
+    }
+  }
+}
+
+/*
+ Material Checkboxes & Radios
+ */
+.material-checkbox{
+  &.material-checkbox-primary{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before {
+          border-color: $primary;
+        }
+      }
+    }
+  }
+  &.material-checkbox-success{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $success;
+        }
+      }
+    }
+  }
+  &.material-checkbox-info{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $info;
+        }
+      }
+    }
+  }
+  &.material-checkbox-secondary{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $secondary;
+        }
+      }
+    }
+  }
+  &.material-checkbox-warning{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $warning;
+        }
+      }
+    }
+  }
+  &.material-checkbox-danger{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $danger;
+        }
+      }
+    }
+  }
+  &.material-checkbox-light{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $light;
+        }
+      }
+    }
+  }
+  &.material-checkbox-dark{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label:before{
+          border-color: $dark;
+        }
+      }
+    }
+  }
+}
+
+.material-radio{
+  &.material-radio-primary{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $primary;
+          }
+          &:after{
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-success{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $success;
+          }
+          &:after{
+            background-color: $success;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-info{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $info;
+          }
+          &:after{
+            background-color: $info;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-secondary{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $secondary;
+          }
+          &:after{
+            background-color: $secondary;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-warning{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $warning;
+          }
+          &:after{
+            background-color: $warning;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-danger{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $danger;
+          }
+          &:after{
+            background-color: $danger;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-light{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $light;
+          }
+          &:after{
+            background-color: $light;
+          }
+        }
+      }
+    }
+  }
+  &.material-radio-dark{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label{
+          &:before{
+            border-color: $dark;
+          }
+          &:after{
+            background-color: $dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ Toggle Buttons
+ */
+
+.toggle-button{
+  &.toggle-button-primary{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $primary;
+            border-color: $primary;
+          }
+          &:after {
+            border-color: $primary-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-success{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $success;
+            border-color: $success;
+          }
+          &:after {
+            border-color: $success-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-info{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $info;
+            border-color: $info;
+          }
+          &:after {
+            border-color: $info-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-danger{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $danger;
+            border-color: $danger;
+          }
+          &:after {
+            border-color: $danger-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-warning{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $warning;
+            border-color: $warning;
+          }
+          &:after {
+            border-color: $warning-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-secondary{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $secondary;
+            border-color: $secondary;
+          }
+          &:after {
+            border-color: $secondary-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-light{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $light;
+            border-color: $light;
+          }
+          &:after {
+            border-color: $light-dark;
+          }
+        }
+      }
+    }
+  }
+  &.toggle-button-dark{
+    .custom-control-input{
+      &:checked{
+        ~ .custom-control-label {
+          &:before {
+            background-color: $dark;
+            border-color: $dark;
+          }
+          &:after {
+            border-color: $dark-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+10. Sliders
+--------------------------------------------------
+*/
+
+/*
+Primary
+*/
+.primary-range-input::-webkit-slider-thumb {
+  border: 1px solid $primary;
+}
+.primary-range-input::-moz-range-thumb {
+  border: 1px solid $primary;
+}
+
+.primary-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15, $primary),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.primary-range-input::-ms-fill-lower {
+  background: $primary;
+}
+
+.primary-range-input::-ms-thumb {
+  border: 1px solid $primary;
+}
+
+/*
+Success
+*/
+.success-range-input::-webkit-slider-thumb {
+  border: 1px solid $success;
+}
+.success-range-input::-moz-range-thumb {
+  border: 1px solid $success;
+}
+
+.success-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15, $success),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.success-range-input::-ms-fill-lower {
+  background: $success;
+}
+
+.success-range-input::-ms-thumb {
+  border: 1px solid $success;
+}
+
+/*
+Info
+*/
+.info-range-input::-webkit-slider-thumb {
+  border: 1px solid  $info;
+}
+.info-range-input::-moz-range-thumb {
+  border: 1px solid  $info;
+}
+
+.info-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15,  $info),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.info-range-input::-ms-fill-lower {
+  background:  $info;
+}
+
+.info-range-input::-ms-thumb {
+  border: 1px solid $info;
+}
+
+/*
+Warning
+*/
+.warning-range-input::-webkit-slider-thumb {
+  border: 1px solid  $warning;
+}
+.warning-range-input::-moz-range-thumb {
+  border: 1px solid  $warning;
+}
+
+.warning-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15,  $warning),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.warning-range-input::-ms-fill-lower {
+  background:  $warning;
+}
+
+.warning-range-input::-ms-thumb {
+  border: 1px solid $warning;
+}
+
+/*
+Danger
+*/
+.danger-range-input::-webkit-slider-thumb {
+  border: 1px solid  $danger;
+}
+.danger-range-input::-moz-range-thumb {
+  border: 1px solid  $danger;
+}
+
+.danger-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15,  $danger),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.danger-range-input::-ms-fill-lower {
+  background:  $danger;
+}
+
+.danger-range-input::-ms-thumb {
+  border: 1px solid $danger;
+}
+
+/*
+Dark
+*/
+.dark-range-input::-webkit-slider-thumb {
+  border: 1px solid $dark;
+}
+.dark-range-input::-moz-range-thumb {
+  border: 1px solid $dark;
+}
+
+.dark-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15, $dark),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.dark-range-input::-ms-fill-lower {
+  background:  $dark;
+}
+
+.dark-range-input::-ms-thumb {
+  border: 1px solid $dark;
+}
+
+/*
+Secondary
+*/
+.secondary-range-input::-webkit-slider-thumb {
+  border: 1px solid $secondary;
+}
+.secondary-range-input::-moz-range-thumb {
+  border: 1px solid $secondary;
+}
+
+.secondary-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15, $secondary),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.secondary-range-input::-ms-fill-lower {
+  background:  $secondary;
+}
+
+.secondary-range-input::-ms-thumb {
+  border: 1px solid $secondary;
+}
+
+/*
+Light
+*/
+.light-range-input::-webkit-slider-thumb {
+  border: 1px solid $light;
+}
+.light-range-input::-moz-range-thumb {
+  border: 1px solid $light;
+}
+
+.light-range-input{
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      color-stop(0.15, $light),
+      color-stop(0.15, #ddd)
+  );
+}
+
+.light-range-input::-ms-fill-lower {
+  background:  $light;
+}
+
+.light-range-input::-ms-thumb {
+  border: 1px solid $light;
+}
+
+
+/*
+11. Form Controls
+--------------------------------------------------
+*/
+.material-form{
+  .form-group{
+    .form-control {
+      &.form-control-primary{
+        &:focus{
+          ~ label {
+            color: $primary;
+            &:after{
+              background-color: $primary;
+            }
+          }
+        }
+      }
+      &.form-control-success{
+        &:focus{
+          ~ label {
+            color: $success;
+            &:after{
+              background-color: $success;
+            }
+          }
+        }
+      }
+      &.form-control-info{
+        &:focus{
+          ~ label {
+            color: $info;
+            &:after{
+              background-color: $info;
+            }
+          }
+        }
+      }
+      &.form-control-warning{
+        &:focus{
+          ~ label {
+            color: $warning;
+            &:after{
+              background-color: $warning;
+            }
+          }
+        }
+      }
+      &.form-control-danger{
+        &:focus{
+          ~ label {
+            color: $danger;
+            &:after{
+              background-color: $danger;
+            }
+          }
+        }
+      }
+      &.form-control-secondary{
+        &:focus{
+          ~ label {
+            color: $secondary;
+            &:after{
+              background-color: $secondary;
+            }
+          }
+        }
+      }
+      &.form-control-light{
+        &:focus{
+          ~ label {
+            color: $light;
+            &:after{
+              background-color: $light;
+            }
+          }
+        }
+      }
+      &.form-control-dark{
+        &:focus{
+          ~ label {
+            color: $dark;
+            &:after{
+              background-color: $dark;
+            }
+          }
+        }
+      }
+    }
+  }
+}

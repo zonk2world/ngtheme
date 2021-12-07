@@ -1,0 +1,26 @@
+<div class="scroll-wrapper">
+  <div class="navbar nav-title">
+    <a class="site-title navbar-brand site-logo">
+      <img src="./assets/img/logo.png" alt="Logo">
+    </a>
+  </div>
+  <!-- sidebar menu -->
+  <div id="sidebar-menu" class="main-menu-wrapper">
+    <div class="menu-section">
+      <ul class="nav side-menu flex-column">
+        <li class="nav-item"
+            *ngFor="let menuItem of menuList"
+            (click)="select(menuItem.name)"
+            [ngClass]="{active: isActive(menuItem.name)}">
+            <a href="javascript:void(0)"
+               [routerLink]="menuItem.link">
+              <i class="fa fa-{{menuItem.icon}}"></i>
+               <span>{{menuItem.name}}</span>
+            </a>
+          </li>
+       </ul>
+    </div>
+  </div>
+  <!-- /sidebar menu -->
+</div>
+

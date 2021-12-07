@@ -1,0 +1,92 @@
+/*
+[Light Header]
+------------------------------------------------------------------
+*/
+
+.light-header{
+  .header{
+    .header-menu{
+      background: white;
+      color: $dark;
+      @include box-shadow(1px 0 20px rgba(0,0,0,.08));
+      .toggle{
+        #menu-toggle{
+          color:  $dark;
+          span {
+            background:  $dark;
+            &:before {
+              background:  $dark;
+            }
+            &:after {
+              background: $dark;
+            }
+          }
+        }
+      }
+      .navbar-right{
+        > li{
+          > a{
+            color:  $dark !important;
+          }
+          &.dropdown{
+            .dropdown-toggle{
+              &.info-number {
+                .badge {
+                  color: white;
+                }
+              }
+            }
+            .dropdown-menu {
+              .notification-list {
+                .list-group-item{
+                  border-color:$whitesmoke!important;
+                  border-bottom: 1px solid $whitesmoke!important;
+                  time{
+                    color: $dark;
+                  }
+                  &:hover{
+                    background: rgba(0,0,0,.03)!important;
+                  }
+                }
+              }
+              > li > a {
+                color: $dark;
+                &:hover{
+                  background: rgba(0,0,0,.03)!important;
+                }
+              }
+              > li.read-all-notif:hover a{
+                background-color: transparent!important;
+              }
+            }
+            &.profile-dropdown{
+              .dropdown-menu{
+                color: $dark;
+                .divider{
+                  border-color: $whitesmoke;
+                }
+              }
+            }
+          }
+          &.search-wrap {
+            input[type="text"] {
+              background:  $whitesmoke;
+              color: $grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

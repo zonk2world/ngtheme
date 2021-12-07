@@ -1,0 +1,40 @@
+@import "../../../../src/sass/variables";
+.tile-count {
+  clear: both;
+  > [class^=col-]{
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+  }
+  .tile-stats-count {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    margin-bottom: 10px;
+    i{
+      font-size: 26px;
+      color: fade-out( $light-grey, .6);
+    }
+    .counter {
+      line-height: 47px;
+      font-weight: 400;
+      font-size: 42px;
+    }
+    span {
+      font-size: 12px;
+    }
+    h5{
+      font-size: 14px;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+    h3{
+      margin-top: 0;
+    }
+    > div{
+      padding: 20px;
+      background-clip: padding-box;
+      background-color: #ffffff;
+    }
+  }
+}

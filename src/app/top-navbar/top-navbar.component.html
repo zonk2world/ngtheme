@@ -1,0 +1,30 @@
+<header class="header">
+  <nav class="header-menu d-flex justify-content-between">
+    <div class="nav toggle">
+      <a href="javascript:void(0)" (click)="toggleLeftSidebar()" id="menu-toggle" class="ripple">
+        <span class="bars"></span>
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right ml-auto">
+      <li class="search-wrap d-sm-none d-md-block">
+        <form autocomplete="on">
+          <input type="text" name="search" class="search" placeholder="What're we looking for?">
+          <div>
+            <button class="search-submit" value="" type="submit"> <i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+        </form>
+      </li>
+      <li class="profile-dropdown dropdown">
+        <a href="javascript:void(0)" class="user-profile dropdown-toggle font-weight-bold" data-toggle="dropdown" aria-expanded="false">
+          <img src="./assets/img/avatar.png" alt="Profile picture" class="rounded-circle">
+          <span class="d-sm-block">Admin</span>
+          <span class="fa fa-angle-down"></span>
+        </a>
+        <ul class="dropdown-menu float-right" id="profileMenu">
+          <li><a routerLink=""><i class="fa fa-user user" aria-hidden="true"></i> My Profile</a></li>
+          <li><button type="button" class="btn bg-transparent" (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</header>

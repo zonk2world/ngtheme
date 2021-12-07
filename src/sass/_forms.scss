@@ -1,0 +1,906 @@
+@import "variables";
+@import "mixins";
+
+/*
+[Form Elements]
+------------------------------------------------------------------
+*/
+
+/*
+1. Form basic elements styles
+2. Input Sizes
+3. Checkboxes & Radio buttons
+4. Form groups
+5. Form validation
+6. Prepend & Append inputs
+7. Custom file input
+8. Form layouts: Material form
+9. Form layouts: Responsive Handlers
+10. Form wizard
+-------------------------------------------------------------------*/
+
+
+/*
+1. Form basic elements styles
+--------------------------------------------------
+*/
+
+label, input, button, select, textarea {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+input {
+  &[type="radio"], &[type="checkbox"] {
+    line-height: normal;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+input[type=text] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+select {
+  &[multiple], &[size] {
+    height: auto !important;
+  }
+}
+select{
+  &:not([multiple]){
+    &.form-control{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-image: url(/assets/images/arrow-buttom.svg)!important;
+      @include background-size(8px!important);
+      background-repeat: no-repeat!important;
+      background-position: 98% center!important;
+    }
+  }
+}
+select::-ms-expand {
+  display: none;
+}
+input, select, textarea {
+  &:focus{
+    outline: none;
+    @include box-shadow(none);
+  }
+}
+
+textarea{
+  min-height: 80px;
+}
+
+input {
+  &[type="file"], &[type="radio"], &[type="checkbox"] {
+    &:focus{
+      outline: none;
+      @include box-shadow(none);
+    }
+  }
+}
+
+form{
+  legend {
+    margin: 15px 0 10px 0;
+  }
+}
+
+.form-control {
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  font-family: Arial, sans-serif;
+  -webkit-appearance: none;
+  color: $dark-blue;
+  outline: 0;
+  padding: 9px 12px;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: normal;
+  vertical-align: middle;
+  @include transition(all 0.12s ease);
+  @include box-shadow(none);
+  @include border-radius(2px);
+  &:focus {
+    border-color: $whitesmoke;
+    background-color: transparent;
+    outline: 0 !important;
+    @include box-shadow(none);
+    &::-moz-placeholder, &:-ms-input-placeholder, &::-webkit-input-placeholder {
+      color: inherit;
+      opacity: 0.7;
+    }
+  }
+  &::-moz-placeholder, &:-ms-input-placeholder, &::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.33;
+  }
+  &[disabled], &[readonly] {
+    background: $whitesmoke;
+    color: rgba(81, 100, 107, 0.23);
+  }
+}
+
+fieldset[disabled] {
+  .form-control {
+    background: $whitesmoke;
+    color: rgba(81, 100, 107, 0.23);
+  }
+}
+
+/*
+2. Input Sizes
+--------------------------------------------------
+*/
+
+.input-sm {
+  font-size: 13px;
+  min-height: 32px;
+  height: 32px;
+  padding: 8px 9px;
+}
+
+.input-lg {
+  @include border-radius(3px);
+  font-size: 18px;
+  height: 45px;
+  padding: 11px 13px;
+}
+
+/*
+3. Checkboxes & Radio buttons
+--------------------------------------------------
+*/
+
+.form-check{
+  margin-bottom: 10px;
+  padding-left: 0;
+}
+.form-group{
+  .form-check{
+    padding-left: 1.25rem;
+  }
+}
+.custom-checkbox{
+  .custom-control-label:before{
+    @include border-radius(0);
+  }
+  .custom-control-input{
+    &:checked {
+      ~.custom-control-label:before{
+        background-size: 10px;
+      }
+    }
+    &:focus{
+      ~.custom-control-label:before{
+        @include box-shadow(none);
+      }
+    }
+  }
+}
+.custom-checkbox, .custom-radio{
+  transition: border 0.2s linear 0s, color 0.2s linear 0s;
+  cursor: pointer;
+  .custom-control-label:before {
+    width: 17px;
+    height: 17px;
+    background-color: #fff;
+    border: 1px solid $lighter-grey;
+    @include transition(color .2s linear 0s);
+  }
+  .custom-control-input{
+    &:checked {
+      ~.custom-control-label:before {
+        @include transform(color .2s linear 0s);
+      }
+    }
+    &:focus {
+      ~.custom-control-label:before {
+        @include box-shadow(none);
+      }
+    }
+    &:active{
+      ~.custom-control-label:before{
+        background-color: $whitesmoke;
+      }
+    }
+    &:disabled{
+      ~.custom-control-label{
+        &:after, &:before{
+          opacity: .6;
+        }
+      }
+    }
+  }
+  .custom-control-label{
+    margin: 3px;
+    cursor: pointer;
+  }
+}
+
+.material-checkbox{
+  .custom-control-label:before{
+    @include transition(all 0.2s ease-in-out);
+    width: 20px;
+    height: 20px;
+    border: 2px solid fade-out($dark-blue, .4);
+    background-image: none!important;
+    background-color: transparent;
+    @include border-radius(0);
+  }
+  .custom-control-label{
+    margin: 4px 3px 4px -24px;
+    padding-left: 26px;
+  }
+  .custom-control-input{
+    &:checked{
+      ~.custom-control-label:before{
+        @include transform(rotate(-45deg));
+        height: 10px;
+        background-color: transparent!important;
+        border-top-style: none;
+        border-right-style: none;
+      }
+    }
+    &:active, &:disabled, &:focus {
+      ~.custom-control-label:before {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.toggle-button{
+  .custom-control-label{
+    &:after{
+      content: "";
+      position: absolute;
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      background-color: white;
+      @include border-radius(20px);
+      @include box-shadow(0 1px 3px 1px rgba(0, 0, 0, 0.4));
+      left: -5px;
+      top: 2px;
+      border: 1px solid rgba(0,0,0, .54);
+      transition: left 0.3s ease, background 0.3s ease, box-shadow 0.1s ease;
+    }
+    &:before{
+      @include transition(background 0.3s ease);
+      width: 30px;
+      height: 18px;
+      background-color: rgba(128, 125, 125, 0.7);
+      border-color: transparent;
+      @include border-radius(15px);
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+  }
+  .custom-control-label{
+    margin: 4px 3px 4px -49px;
+    padding-left: 68px;
+  }
+  .custom-control-input{
+    &:checked{
+      ~ .custom-control-label{
+        &:before{
+          background-image: none;
+        }
+        &:after{
+          left:15px;
+        }
+      }
+    }
+    &:active, &:disabled, &:focus {
+      ~ .custom-control-label{
+        &:before {
+          background-color: rgba(128, 125, 125, 0.7);
+        }
+      }
+    }
+    &:disabled {
+      ~ .custom-control-label{
+        &:before {
+          opacity: .6;
+        }
+        &:after{
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.material-radio{
+  .custom-control-label{
+    &:before{
+      @include transition(all 0.2s ease-in-out);
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-color: transparent!important;
+      border: 2px solid fade-out($dark-blue, .4);
+    }
+    &:after{
+      content: "";
+      transform: scale(0);
+      background-image: none!important;
+      @include transition(all 0.2s ease-in-out);
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      @include border-radius(50%);
+    }
+  }
+  .custom-control-label{
+    margin: 0 3px 0 -20px;
+    padding-left: 24px;
+  }
+  .custom-control-input{
+    &:checked{
+      ~ .custom-control-label{
+        &:before{
+          background-image: none;
+          background-color: transparent;
+        }
+        &:after{
+          transform: scale(1);
+        }
+      }
+    }
+    &:active, &:disabled, &:focus {
+      ~ .custom-control-label:before {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+/*
+4. Form Groups
+--------------------------------------------------
+*/
+
+.form-group {
+  margin-bottom: 10px;
+  label {
+    &:not(.error) {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    &.form-check-label {
+      font-size: 14px;
+      text-transform: none;
+      font-weight: 500;
+    }
+    &.col-form-label{
+      text-align: right;
+    }
+  }
+}
+.error {
+  font-size: 12px;
+  color: #eb7374;
+  display: block;
+}
+
+/*
+6. Prepend & Append inputs
+--------------------------------------------------
+*/
+.input-group{
+  +.form-control{
+    border-right-color: rgba(200, 200, 200, 0.07);
+  }
+  .input-group-text{
+    background-color: $light-blue;
+    color: $grey;
+    font-size: 14px;
+    border-color:rgba(0, 0, 0, 0.07);
+    transition: border 0.2s linear 0s, box-shadow 0.2s linear 0s, color 0.2s linear 0s, box-shadow 0.2s linear 0s, background 0.2s linear 0s;
+    text-transform: none;
+  }
+  &.transparent{
+    .input-group-prepend, .input-group-append {
+      .input-group-text{
+        padding: 9px 14px;
+        font-size: 14px;
+        background-color: transparent;
+        border-color: rgba(0, 0, 0, 0.07);
+      }
+    }
+  }
+}
+
+/*
+7. Custom file input
+--------------------------------------------------
+*/
+.custom-file{
+  width: 100%;
+  .custom-file-label{
+    padding: 10px;
+    &:after{
+      background-color: $light-blue;
+      color: $grey;
+      border-color:rgba(0, 0, 0, 0.07);
+      text-transform: none;
+      font-weight: normal;
+      font-size: 14px;
+      padding: 7px;
+    }
+  }
+}
+
+.custom-file-input{
+  &:focus{
+    ~.custom-file-label{
+      @include box-shadow(none);
+    }
+  }
+}
+.custom-select{
+  width: 100%;
+  &:focus{
+    @include box-shadow(none);
+    outline: none;
+    border-color: $whitesmoke;
+  }
+}
+
+/*
+8. Form layouts: Material form
+--------------------------------------------------
+*/
+.material-form{
+  .form-row{
+    .form-group{
+      .form-control{
+        &:focus{
+          ~.form-control-line, ~label{
+            &:after{
+              width: calc(100% - 7px);
+            }
+          }
+        }
+      }
+      &.floating-label {
+        .form-control~label{
+          left: 5px;
+        }
+      }
+    }
+  }
+  .form-check{
+    margin-bottom: 0;
+    margin-top: 20px;
+  }
+  .form-group{
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 20px;
+    clear: both;
+    label{
+      font-size: 12px;
+      text-transform: none;
+      font-weight: 400;
+      &:not(.custom-control){
+        opacity: 0.7;
+      }
+    }
+    .form-control {
+      color: $dark-blue;
+      font-size: 14px;
+      padding-left: 0;
+      @include box-shadow(none);
+      border: 0;
+      border-bottom: 1px solid #cccccc;
+      background: transparent;
+      @include transition(background 0s ease-out);
+      ~ label, ~ .form-control-line{
+        position: absolute;
+        bottom: 0;
+        top: -14px;
+        width: 100%;
+        pointer-events: none;
+        margin-bottom: 0;
+        font-size: 12px;
+        text-transform: none;
+        font-weight: 400;
+        opacity: 0.5;
+        @include transition(all 0.3s ease);
+        &:after{
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 45%;
+          height: 2px;
+          width: 10px;
+          visibility: hidden;
+          @include transition(0.2s ease all);
+        }
+      }
+      &:focus{
+        @include transition-duration(.3s);
+        ~ label, ~ .form-control-line {
+          opacity: 1;
+          &:after {
+            visibility: visible;
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+    small{
+      float: right;
+    }
+    &.floating-label{
+      .form-control {
+        &:focus{
+          ~ label {
+            top: -17px;
+            font-size: 12px;
+          }
+        }
+        ~ label {
+          top: 8px;
+          font-size: 14px;
+          left: 0;
+        }
+        &.filled{
+          ~ label {
+            top: -17px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    .btn{
+      &[type="submit"]{
+        min-width: 140px;
+      }
+    }
+    &.row{
+      label{
+        margin-bottom: 0!important;
+      }
+      .form-control{
+        ~ label, ~ .form-control-line{
+          width: calc(100% - 14px);
+        }
+      }
+      [class*=col-]:last-child {
+        padding-right: 7px;
+      }
+      .form-control-line{
+        ~ .help-block{
+          bottom: -20px;
+          right: 10px;
+          position: absolute;
+        }
+      }
+    }
+  }
+  .input-group{
+    label{
+      margin-bottom: 0;
+      margin-right: 0;
+    }
+    .input-group-append, .input-group-prepend{
+      background-color: transparent;
+      border: 0;
+      padding: 0.3rem .75rem;
+    }
+    .input-group-content{
+      position: relative;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      width: 1%;
+      .form-control{
+        width: 100%;
+        ~ label {
+          top: 8px;
+          font-size: 14px;
+          left: 0;
+        }
+        &:focus{
+          border: 0;
+          ~ label {
+            top: -17px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &.form-inline{
+    .form-group{
+      .form-control{
+        ~ label{
+          justify-content: flex-start;
+          left: 0;
+        }
+      }
+      &.floating-label{
+        .form-control{
+          ~ label{
+            top: 0;
+            left: 0;
+          }
+          &:focus{
+            ~ label{
+              top: -35px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+input:-webkit-autofill{
+  ~label {
+    top: -17px!important;
+    font-size: 12px!important;
+  }
+}
+@media (max-width: 340px) {
+  .material-form{
+    .form-group{
+      margin-top: 10px!important;
+      margin-bottom: 18px;
+    }
+  }
+}
+
+/*
+9. Form layouts: Responsive Handlers
+--------------------------------------------------
+*/
+@media (min-width: 577px) {
+  .material-form{
+    &.form-inline{
+      .form-group{
+        .form-control{
+          ~ label{
+            top: -53px!important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 576px) {
+  .form-inline{
+    @include flex-direction(column);
+    .form-group{
+      width: 100%;
+    }
+  }
+  .form-group{
+    label{
+      &.col-form-label{
+        text-align: left;
+      }
+    }
+  }
+  .material-form {
+    &.form-inline{
+      .form-group{
+        .form-control{
+          ~label{
+            top: -20px!important;
+          }
+        }
+        &.floating-label{
+          .form-control{
+            &.filled{
+              ~label{
+                top: -20px!important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  form {
+    .row {
+      margin-left: 0;
+      margin-right: 0;
+      [class*='col-'] {
+        margin-bottom: 5px;
+        &:not(:first-child), &:not(:last-child) {
+          padding-right: 7px;
+          padding-left: 7px;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  form {
+    .row{
+      [class*="col-lg-"] {
+        &:not(:first-child), &:not(:last-child) {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+/*
+10. Form wizard
+--------------------------------------------------
+*/
+.wizard{
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  .progress {
+    position: absolute;
+    display: inline-block;
+    top: 31px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 5px;
+    z-index: 98;
+  }
+  .form-group{
+    .form-check{
+      padding-left: 0;
+    }
+  }
+  .wizard-navigation{
+    position: relative;
+    z-index: 99;
+    &.nav{
+      .nav-item{
+        .wizard-navigation-name{
+          display: block;
+          font-size: 14px;
+          margin-top: 4px;
+          font-weight: bold;
+          color: darken(#eaeff3, 10%);
+        }
+        a{
+          border: 2px solid #eaeff3;
+          color: darken(#eaeff3, 10%);
+          font-size: 20px;
+          padding: 11px;
+          font-weight: 600;
+          width: 49px;
+          height: 49px;
+          margin: 7px auto;
+          @include border-radius(50%);
+          background-color: #eaeff3;
+        }
+        &.active, &.done{
+          a{
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  .wizard-content{
+    .form-check{
+      label{
+        font-size: 14px;
+      }
+    }
+    #Step2, #Step3, #Step4{
+      display: none;
+    }
+    div[data-opened-step="false"]{
+      display: none;
+    }
+    div[data-opened-step="true"]{
+      display: block!important;
+    }
+    #Step4{
+      h4{
+        border-bottom: 1px solid $whitesmoke;
+        padding-bottom: 10px;
+      }
+    }
+
+  }
+  .wizard-buttons{
+    button{
+      width: 120px;
+    }
+    #ButtonPrevious[data-prev-step=""], #ButtonNext[data-next-step=""]  {
+      display: none;
+    }
+    #ButtonFinish{
+      display: none;
+      &.show{
+        display: block;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .wizard {
+    .progress{
+      top: 21px;
+    }
+    .wizard-navigation{
+      &.nav{
+        .nav-item {
+          .wizard-navigation-name{
+            font-size: 12px;
+          }
+          a{
+            font-size: 15px;
+            padding: 4px;
+            width: 38px;
+            height: 38px;
+          }
+        }
+      }
+    }
+    .wizard-buttons{
+      button{
+        width: 100px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 575px){
+  .wizard {
+    .wizard-navigation{
+      &.nav {
+        .nav-item {
+          a {
+            font-size: 15px;
+            padding: 2px;
+            width: 33px;
+            height: 33px;
+          }
+          .wizard-navigation-name {
+            font-size: 9px;
+            text-transform: lowercase;
+            line-height: 1.2;
+          }
+        }
+      }
+    }
+    .wizard-buttons{
+      padding: 0;
+      #ButtonPrevious{
+        margin-bottom: 10px;
+        margin-right: 5px;
+      }
+    }
+    .wizard-content {
+      padding: 0;
+    }
+  }
+}
+

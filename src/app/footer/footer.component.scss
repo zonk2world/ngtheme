@@ -1,0 +1,22 @@
+@import "../../../src/sass/variables";
+@import "../../../src/sass/mixins";
+.footer {
+  background: #fff;
+  padding: 15px 20px;
+  display: block;
+  color: $grey-dark;
+  font-size: 14px;
+  .company-name{
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  img{
+    max-width: 100%;
+    height: 14px;
+  }
+  a{
+    &:hover{
+      color: $grey-dark;
+    }
+  }
+}
